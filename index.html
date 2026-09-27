@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KRISHIVIDYA — India's Indigenous Knowledge of Farming, Animals and Water</title>
+<meta name="description" content="KRISHIVIDYA is an open archive of India's indigenous knowledge of farming, animal husbandry and water, from the Vedas to 2026, with detailed profiles of Maharashtra's communities and official district data.">
+<meta name="theme-color" content="#2f4a2b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a href="#home" class="brand" aria-label="KRISHIVIDYA home">
+      <span class="brand-mark" aria-hidden="true">🌾</span>
+      <span><strong>KRISHIVIDYA</strong><small class="dev">कृषिविद्या</small></span>
+    </a>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="#history" data-t="nav.history">History</a>
+      <a href="#texts" data-t="nav.texts">Texts</a>
+      <a href="#water" data-t="nav.water">Water &amp; Rivers</a>
+      <a href="#practices" data-t="nav.practices">Practices</a>
+      <a href="#crops" data-t="nav.crops">Crops</a>
+      <a href="#animals" data-t="nav.animals">Animals</a>
+      <a href="#communities" data-t="nav.communities">Communities</a>
+      <a href="#maharashtra" data-t="nav.mhShort">Data</a>
+      <a href="#risk" data-t="nav.riskShort">At Risk</a>
+      <a href="#archive" data-t="nav.archShort">Voices</a>
+      <a href="#sources" data-t="nav.sources">Sources</a>
+      <button type="button" class="nav-theme" data-theme-toggle>🌗 <span data-t="ui.theme">Switch theme</span></button>
+    </nav>
+    <div class="tools">
+      <button type="button" class="icon-btn" data-open-search aria-label="Search the archive (Ctrl+K)">🔍</button>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button><button type="button" data-lang="mr">मराठी</button><button type="button" data-lang="hi">हिन्दी</button>
+      </div>
+      <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch between light and dark theme">🌗</button>
+      <button type="button" class="icon-btn menu" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <p class="lang-note" id="langNote" hidden data-t="ui.englishNote"></p>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-t="hero.eyebrow">An open archive of Indian indigenous knowledge</p>
+      <h1>KRISHIVIDYA <span class="dev">कृषिविद्या</span></h1>
+      <p class="hero-motto" data-t="hero.motto"></p>
+      <p class="hero-sub" data-t="hero.sub"></p>
+      <div class="hero-actions">
+        <a href="#history" class="btn primary" data-t="hero.explore">Start exploring</a>
+        <button type="button" class="btn ghost" data-open-search data-t="hero.search">Search the archive</button>
+      </div>
+    </div>
+    <figure class="hero-seal" aria-label="Motto from the Rigveda">
+      <div class="seal-ring"><span class="sa">कृषिमित् कृषस्व</span></div>
+      <figcaption data-t="hero.quote"></figcaption>
+    </figure>
+  </div>
+  <div class="wrap"><div class="hero-stats" id="heroStats"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="wrap about">
+    <div class="reveal">
+      <h2 class="h2" data-t="about.title">Why KRISHIVIDYA exists</h2>
+      <p data-t="about.p1"></p>
+      <p data-t="about.p2"></p>
+      <figure class="motto-card">
+        <figcaption class="eyebrow" data-t="motto.label">Our motto</figcaption>
+        <p class="sa big">कृषिमित् कृषस्व</p>
+        <p data-t="hero.motto"></p>
+      </figure>
+    </div>
+    <div class="reveal">
+      <h3 class="h3" data-t="obj.title">Our objectives</h3>
+      <ol class="objectives">
+        <li data-t="obj.1"></li><li data-t="obj.2"></li><li data-t="obj.3"></li><li data-t="obj.4"></li>
+        <li data-t="obj.5"></li><li data-t="obj.6"></li><li data-t="obj.7"></li><li data-t="obj.8"></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="section alt">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">01 · <span data-t="nav.history">History</span></p><h2 class="h2" data-t="sec.history"></h2><p class="lede" data-t="sec.history.sub"></p></header>
+    <div class="toolbar"><div class="chips" id="eraChips" aria-label="Filter by era"></div>
+      <label class="switch"><input type="checkbox" id="mhOnly"><span data-t="ui.mhOnly">Maharashtra only</span></label></div>
+    <p class="count" id="tlCount" aria-live="polite"></p>
+    <ol class="timeline" id="timeline"></ol>
+  </div>
+</section>
+
+<!-- TEXTS -->
+<section id="texts" class="section">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">02 · <span data-t="nav.texts">Texts</span></p><h2 class="h2" data-t="sec.texts"></h2><p class="lede" data-t="sec.texts.sub"></p></header>
+    <div class="chips center" id="textChips"></div>
+    <div class="grid g3" id="textGrid"></div>
+  </div>
+</section>
+
+<!-- WATER -->
+<section id="water" class="section alt water-bg">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">03 · <span data-t="nav.water">Water &amp; Rivers</span></p><h2 class="h2" data-t="sec.water"></h2><p class="lede" data-t="sec.water.sub"></p></header>
+    <h3 class="h3">Rivers of Maharashtra</h3>
+    <div class="grid g3" id="riverGrid"></div>
+    <h3 class="h3">Traditional water systems</h3>
+    <div class="chips" id="waterChips"></div>
+    <div class="grid g3" id="waterGrid"></div>
+  </div>
+</section>
+
+<!-- PRACTICES -->
+<section id="practices" class="section">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">04 · <span data-t="nav.practices">Practices</span></p><h2 class="h2" data-t="sec.practices"></h2><p class="lede" data-t="sec.practices.sub"></p></header>
+    <ul class="legend-row"><li><span class="status status-validated" data-t="st.validated"></span> Confirmed by published agricultural research.</li>
+      <li><span class="status status-studied" data-t="st.studied"></span> Being studied; results are promising or mixed.</li>
+      <li><span class="status status-heritage" data-t="st.heritage"></span> Recorded as tradition; not yet tested.</li></ul>
+    <div class="chips" id="pracChips"></div>
+    <div class="grid g3" id="pracGrid"></div>
+
+    <h2 class="h2 mt" data-t="sec.calendar">The farmer's calendar</h2>
+    <h3 class="h3" data-t="cal.stars">Rain stars</h3>
+    <p class="note">Maharashtra's farmers divide the monsoon into rain stars, each lasting about two weeks. The dates below are approximate and follow the sun's position.</p>
+    <ol class="stars" id="starStrip"></ol>
+    <div class="cal-grid">
+      <div><h3 class="h3" data-t="cal.seasons">The six seasons</h3><div class="tablewrap"><table class="table" id="seasonTable"></table></div></div>
+      <div><h3 class="h3" data-t="cal.sayings">Words of wisdom</h3><div class="sayings" id="sayings"></div></div>
+    </div>
+    <h3 class="h3" data-t="cal.fest">Festivals of the farming year</h3>
+    <div class="grid g3" id="festGrid"></div>
+  </div>
+</section>
+
+<!-- CROPS -->
+<section id="crops" class="section alt">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">05 · <span data-t="nav.crops">Crops</span></p><h2 class="h2" data-t="sec.crops"></h2><p class="lede" data-t="sec.crops.sub"></p></header>
+    <div class="toolbar"><label class="field"><span class="sr" data-t="ui.search">Search</span><input type="search" id="cropSearch" data-tph="ui.filterPh" autocomplete="off"></label><div class="chips" id="cropFlags"></div></div>
+    <div class="chips" id="cropChips"></div>
+    <p class="count" id="cropCount" aria-live="polite"></p>
+    <div class="grid g4" id="cropGrid"></div>
+  </div>
+</section>
+
+<!-- ANIMALS -->
+<section id="animals" class="section">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">06 · <span data-t="nav.animals">Animals</span></p><h2 class="h2" data-t="sec.animals"></h2><p class="lede" data-t="sec.animals.sub"></p></header>
+    <div class="tabs chips center" id="animalTabs" role="tablist"></div>
+    <div id="animalSub"></div>
+    <div class="grid g3" id="animalGrid"></div>
+  </div>
+</section>
+
+<!-- COMMUNITIES -->
+<section id="communities" class="section alt">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">07 · <span data-t="nav.communities">Communities</span></p><h2 class="h2" data-t="sec.communities"></h2><p class="lede" data-t="sec.communities.sub"></p></header>
+    <p class="note">Maharashtra has more than 45 notified Scheduled Tribes (about 1.05 crore people in the 2011 Census) and many nomadic and denotified groups. This archive begins with 51 profiles and grows through contributions made with community consent.</p>
+    <div class="toolbar"><label class="field"><span class="sr" data-t="ui.search">Search</span><input type="search" id="commSearch" data-tph="ui.filterPh" autocomplete="off"></label></div>
+    <div class="chips" id="commChips"></div>
+    <p class="count" id="commCount" aria-live="polite"></p>
+    <div class="grid g2" id="commGrid"></div>
+  </div>
+</section>
+
+<!-- MAHARASHTRA DATA -->
+<section id="maharashtra" class="section">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">08 · <span data-t="nav.mh">Maharashtra Data</span></p><h2 class="h2" data-t="sec.mh"></h2><p class="lede" data-t="sec.mh.sub"></p></header>
+    <h3 class="h3" data-t="mh.districts">District explorer</h3>
+    <div class="toolbar"><div class="chips" id="divChips"></div>
+      <label class="field inline"><span data-t="mh.rank">Rank by</span> <select id="distSort"></select></label>
+      <button type="button" class="btn ghost small" id="csvBtn">⬇️ <span data-t="mh.csv">Download CSV</span></button></div>
+    <div class="panel"><div class="rank" id="distRank"></div></div>
+    <div class="panel"><h3 class="h4" data-t="mh.compare">Compare two districts</h3>
+      <div class="cmp"><select id="cmpA" aria-label="First district"></select><span aria-hidden="true">⇄</span><select id="cmpB" aria-label="Second district"></select></div>
+      <div class="tablewrap"><table class="table" id="cmpTable"></table></div></div>
+    <p class="note" data-t="mh.note"></p>
+
+    <h3 class="h3" data-t="mh.trends">Long-term trends</h3>
+    <div class="grid g2">
+      <article class="panel"><h4 class="h4">Livestock in Maharashtra, 1961–2019 (lakh)</h4><div id="chartLivestock"></div></article>
+      <article class="panel"><h4 class="h4">Area under selected crops, 1960-61 to 2024-25 (lakh ha)</h4><div id="chartArea"></div></article>
+      <article class="panel"><h4 class="h4">Average farm size (hectares)</h4><div id="chartHolding"></div></article>
+      <article class="panel"><h4 class="h4">Agriculture's share of the state economy (%)</h4><div id="chartShare"></div></article>
+    </div>
+    <div class="grid g2">
+      <article class="panel"><h3 class="h4" data-t="mh.facts">Key facts</h3><div class="tablewrap"><table class="table" id="factTable"></table></div></article>
+      <article class="panel"><h3 class="h4">What the data tells us</h3><ol class="findings" id="findings"></ol></article>
+    </div>
+    <h3 class="h3" data-t="mh.risk">Measured declines</h3>
+    <div class="grid g3" id="riskGrid"></div>
+  </div>
+</section>
+
+
+<!-- HERITAGE AT RISK -->
+<section id="risk" class="section">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">09 · <span data-t="nav.risk">Heritage at Risk</span></p><h2 class="h2" data-t="sec.risk"></h2><p class="lede" data-t="sec.risk.sub"></p></header>
+    <div class="tiles" id="riskTiles"></div>
+    <div class="toolbar"><label class="field"><span class="sr" data-t="ui.search">Search</span><input type="search" id="riskSearch" data-tph="ui.filterPh" autocomplete="off"></label>
+      <button type="button" class="btn ghost small" id="riskCsv">⬇️ <span data-t="rk.csv">Download risk list</span></button></div>
+    <div class="chips" id="riskTypes"></div>
+    <p class="count" id="riskCount" aria-live="polite"></p>
+    <div class="panel tablewrap"><table class="table risk-table" id="riskTable"></table></div>
+    <p class="note" data-t="rk.note"></p>
+    <div class="grid g2">
+      <article class="panel"><h3 class="h4" data-t="rk.measured">Measured declines in Maharashtra</h3><div id="riskChart"></div></article>
+      <article class="panel"><h3 class="h4" data-t="rk.india">India, 20th Livestock Census (2019)</h3><div class="tablewrap"><table class="table" id="indiaTable"></table></div>
+        <p class="src-line">📚 Percentages compare 2019 with the 19th census of 2012.</p></article>
+    </div>
+    <h3 class="h3" data-t="mh.risk">Measured declines</h3>
+    <div class="grid g3" id="riskGrid"></div>
+  </div>
+</section>
+
+<!-- VOICES & VIDEO ARCHIVE -->
+<section id="archive" class="section alt">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">10 · <span data-t="nav.archive">Voices &amp; Video</span></p><h2 class="h2" data-t="sec.archive"></h2><p class="lede" data-t="sec.archive.sub"></p></header>
+    <p class="note" data-t="arch.privacy"></p>
+    <div class="toolbar"><div class="chips" id="archChips"></div>
+      <div class="inline-actions"><a href="#contribute" class="btn primary small">🎙️ <span data-t="arch.record">Record a voice note</span></a>
+        <button type="button" class="btn ghost small" id="exportBtn">⬇️ <span data-t="f.export">Export my contributions</span></button></div></div>
+    <p class="count" id="archCount" aria-live="polite"></p>
+    <div class="grid g3" id="archGrid"></div>
+  </div>
+</section>
+
+
+<!-- SOURCES -->
+<section id="sources" class="section alt">
+  <div class="wrap">
+    <header class="shead reveal"><p class="eyebrow">11 · <span data-t="nav.sources">Sources</span></p><h2 class="h2" data-t="sec.sources"></h2></header>
+    <div class="grid g2">
+      <article class="panel"><h3 class="h4">How this archive is built</h3>
+        <ul class="bul">
+          <li>Every statistic comes from an official publication: the Livestock Census, the Economic Survey of Maharashtra, or ICAR-NBAGR breed registers.</li>
+          <li>Every historical entry is tagged as archaeology, classical text, historical record, policy or science.</li>
+          <li>Dates of ancient texts are scholarly estimates. Where scholars disagree, the range is shown.</li>
+          <li>Practices are marked as supported by research, under study, or heritage only. Heritage remedies are not medical or veterinary advice.</li>
+          <li>Community profiles describe traditional livelihoods, not fixed identities, and should be reviewed with the communities themselves.</li>
+        </ul></article>
+      <article class="panel"><h3 class="h4">Ethics and consent</h3>
+        <ul class="bul">
+          <li>Traditional knowledge belongs to the communities who hold it. Contributors must have the knowledge holder's permission.</li>
+          <li>Sacred or restricted knowledge is not recorded without explicit consent.</li>
+          <li>Knowledge holders are credited by name if they wish, and the project supports benefit sharing under the Biological Diversity Act, 2002.</li>
+          <li>Anyone can ask for an entry to be corrected or removed.</li>
+        </ul></article>
+    </div>
+    <details class="panel"><summary class="h4">Data sources and references</summary><ul class="src" id="sourceList"></ul></details>
+    <details class="panel"><summary class="h4">Illustrations</summary><ul class="src" id="creditList"></ul></details>
+  </div>
+</section>
+
+<!-- CONTRIBUTE -->
+<section id="contribute" class="section">
+  <div class="wrap narrow">
+    <header class="shead reveal"><p class="eyebrow">12 · <span data-t="nav.contribute">Contribute</span></p><h2 class="h2" data-t="sec.contribute"></h2>
+      <p class="lede">Do you know a seed, a practice, a song or an animal that should be recorded? Share it here with the knowledge holder's permission.</p></header>
+    <form id="contribForm" class="form" novalidate>
+      <label class="field"><span data-t="f.name">Your name</span><input name="name" required autocomplete="name"></label>
+      <label class="field"><span data-t="f.place">Village and district</span><input name="place" required></label>
+      <label class="field"><span data-t="f.topic">Topic</span><select name="topic" required><option value="">—</option><option>Seed or crop variety</option><option>Farming practice</option><option>Animal breed or care</option><option>Water system</option><option>Song, proverb or festival</option><option>Other</option></select></label>
+      <label class="field"><span data-t="f.story">Description</span><textarea name="story" rows="5" required></textarea></label>
+      <label class="field"><span data-t="f.title">Title of this record</span><input name="title" placeholder="e.g. Sowing by the Mrig nakshatra"></label>
+      <label class="field"><span data-t="f.speaker">Who is speaking or featured</span><input name="speaker" placeholder="e.g. Shantabai Pawar, 72, farmer"></label>
+      <fieldset class="media-box">
+        <legend>🎙️ <span data-t="arch.record">Record a voice note</span></legend>
+        <div class="rec-row"><button type="button" class="btn ghost small" id="recBtn">🎙️ <span data-t="arch.record">Record</span></button><span id="recStatus" class="rec-status" aria-live="polite"></span></div>
+        <audio id="recPreview" controls hidden></audio>
+        <label class="field"><span data-t="f.file">Attach audio or video (optional)</span><input type="file" name="media" accept="audio/*,video/*"></label>
+        <label class="field"><span data-t="f.yt">YouTube link (optional)</span><input name="youtube" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=..."></label>
+        <p class="note" data-t="arch.privacy"></p>
+      </fieldset>
+      <label class="check"><input type="checkbox" name="consent"> <span data-t="f.consent"></span></label>
+      <button class="btn primary" type="submit" data-t="f.submit">Save contribution</button>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <div><p class="brand-foot">🌾 KRISHIVIDYA <span class="dev">कृषिविद्या</span></p><p class="sa">कृषिमित् कृषस्व</p><p data-t="foot.line"></p></div>
+    <nav aria-label="Footer"><a href="#history" data-t="nav.history">History</a><a href="#risk" data-t="nav.risk">At Risk</a><a href="#archive" data-t="nav.archive">Voices</a><a href="#crops" data-t="nav.crops">Crops</a><a href="#animals" data-t="nav.animals">Animals</a><a href="#communities" data-t="nav.communities">Communities</a><a href="#maharashtra" data-t="nav.mh">Data</a><a href="#contribute" data-t="nav.contribute">Contribute</a></nav>
+  </div>
+</footer>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<div class="overlay" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="dialog"><button type="button" class="x" id="modalClose" aria-label="Close">✕</button><div id="modalBody"></div></div>
+</div>
+<div class="overlay" id="search" hidden role="dialog" aria-modal="true" aria-label="Search">
+  <div class="dialog search-box">
+    <div class="search-head"><span aria-hidden="true">🔍</span><input type="search" id="searchInput" data-tph="ui.searchPh" autocomplete="off" aria-label="Search"><button type="button" class="x static" id="searchClose" aria-label="Close">✕</button></div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
